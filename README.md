@@ -14,6 +14,8 @@ For example, try it on the VS Code repo:
 
 ![VS Code - GitHub1s](https://raw.githubusercontent.com/conwnet/github1s/master/resources/images/vs-code-github1s.png)
 
+You can also use [https://gitlab1s.com](https://gitlab1s.com) or [https://npmjs1s.com](https://npmjs1s.com) in the same way.
+
 For browser extensions, see [Third-party Related Projects](https://github.com/conwnet/github1s#third-party-related-projects).
 
 Or save the following code snippet as a bookmarklet, you can use it to quickly switch between github.com and github1s.com (GitHub markdown doesn't allow js links, so just copy it into a bookmark).
@@ -58,10 +60,10 @@ You can start an online development environment with [Gitpod](https://www.gitpod
 ```bash
 git clone git@github.com:conwnet/github1s.git
 cd github1s
-yarn
-yarn watch
-yarn serve # in another shell
-# Then visit http://localhost:5000 or http://localhost:5000/conwnet/github1s once the build is completed.
+npm install
+npm run watch
+# The cli will automatically open http://localhost:8080 once the build is completed.
+# You can visit http://localhost:8080/conwnet/github1s if it doesn't.
 ```
 
 #### Local development with full VS Code build
@@ -73,17 +75,17 @@ To verify the build:
 
 ```bash
 cd github1s
-yarn build:vscode
+npm run build:vscode
 ```
 
-After the inital successful build, you could use the watch mode:
+After the initial successful build, you could use the watch mode:
 
 ```bash
 cd github1s
-yarn
-yarn watch-with-vscode
-yarn serve # in another shell
-# Then visit http://localhost:5000 or http://localhost:5000/conwnet/github1s once the build is completed.
+npm install
+npm run watch-with-vscode
+# The cli will automatically open http://localhost:8080 once the build is completed.
+# You can visit http://localhost:8080/conwnet/github1s if it doesn't.
 ```
 
 ### ... or ... VS Code + Docker Development
@@ -97,19 +99,19 @@ You can use the VS Code plugin [Remote-Containers](https://marketplace.visualstu
 
    - Now VS Code will create the docker container and connect to the new container so you can use this as a fully setup environment!
 
-5. Open a new VS Code Terminal, then you can run the `yarn` commands listed above.
+5. Open a new VS Code Terminal, then you can run the `npm install` commands listed above.
 
 ```bash
-yarn
-yarn watch
-yarn serve # in another shell
-# Then visit http://localhost:5000 or http://localhost:5000/conwnet/github1s once the build is completed.
+npm install
+npm run watch
+# The cli will automatically open http://localhost:8080 once the build is completed.
+# You can visit http://localhost:8080/conwnet/github1s if it doesn't.
 ```
 
 ### Format all codes
 
 ```bash
-yarn format
+npm run format
 ```
 
 It uses `prettier` to format all possible codes.
@@ -117,17 +119,15 @@ It uses `prettier` to format all possible codes.
 ## Build
 
 ```bash
-yarn
-yarn build
+npm install
+npm run build
 ```
 
 ## Feedback
 
 - If something is not working, [create an issue](https://github.com/conwnet/github1s/issues/new)
 
-- If you have a question, [discuss on gitter](https://gitter.im/conwnet/github1s)
-
-## Project Sponsors
+## Sponsors
 
 The continued development and maintenance of GitHub1s is made possible by these generous sponsors:
 
@@ -135,23 +135,46 @@ The continued development and maintenance of GitHub1s is made possible by these 
 <td><a href="https://sourcegraph.com/">
 <img height="40px" src="https://raw.githubusercontent.com/conwnet/github1s/master/resources/images/sourcegraph-logo.svg">
 </a></td>
-<td><a href="https://vercel.com/?utm_source=vscode-github1s&utm_campaign=oss">
-<img height="40px" src="https://raw.githubusercontent.com/conwnet/github1s/master/resources/images/vercel-logo.svg">
+</tr></tbody></table>
+
+## Partners
+
+We are partnered with [OSS Insight](https://ossinsight.io/?utm_source=github1s&utm_medium=github&utm_campaign=ghtrending) to get the Trending Repositories & some more Interesting Analytics. [OSS Insight](https://ossinsight.io/?utm_source=github1s&utm_medium=github&utm_campaign=ghtrending) provides deep insights into GitHub repos, developers, and curated repo lists from billions of GitHub events. It’s built with [TiDB Cloud](https://www.pingcap.com/tidb-cloud/?utm_source=github1s&utm_medium=github&utm_campaign=ghtrending).
+
+<table><tbody><tr>
+<td><a href="https://ossinsight.io/?utm_source=github1s&utm_medium=github&utm_campaign=ghtrending">
+<img height="40px" src="./resources/images/ossinsight-brand-dark.png">
 </a></td>
 </tr></tbody></table>
 
-## Third-party Related Projects
+## Maintainers! :blush:
+
+<table>
+  <tbody><tr>
+    <td align="center"><a href="https://github.com/conwnet"><img alt="" src="https://avatars.githubusercontent.com/conwnet" width="100px;"><br><sub><b>netcon</b></sub></a><br><a href="https://github.com/conwnet/github1s/commits?author=conwnet" title="Code">💻 🖋</a></td> </a></td>
+    <td align="center"><a href="https://github.com/xcv58"><img alt="" src="https://avatars.githubusercontent.com/xcv58" width="100px;"><br><sub><b>xcv58</b></sub></a><br><a href="https://github.com/conwnet/github1s/commits?author=xcv58" title="Code">💻 🖋</a></td></a></td>
+    <td align="center"><a href="https://github.com/Siddhant-K-code"><img alt="" src="https://avatars.githubusercontent.com/Siddhant-K-code" width="100px;"><br><sub><b>Siddhant Khare</b></sub></a><br><a href="https://github.com/conwnet/github1s/commits?author=Siddhant-K-code" title="Code">💻 🖋</a></td> </a></td>
+  </tr>
+</tbody></table>
+
+## Stargazers over time
+
+[![Stargazers over time](https://api.star-history.com/svg?repos=conwnet/github1s&type=Date)](https://star-history.com/#conwnet/github1s&Date)
+
+<details>
+<summary>Third-party Related Projects</summary>
+<br>
 
 ### Chrome Extensions
 
 - [Repositree](https://chrome.google.com/webstore/detail/repositree/lafjldoccjnjlcmdhmniholdpjkbgajo) ([chouglesaud/repositree](https://github.com/chouglesaud/repositree))
-- [Open in VS Code](https://chrome.google.com/webstore/detail/open-in-vs-code-github1sc/neloiopjjeflfnecdlajhopdlojlkhll) by [zulhfreelancer](https://github.com/zulhfreelancer)
-- [GitHub1s](https://chrome.google.com/webstore/detail/github1s/lodjfmkfbfkpdhnhkcdcoonghhghbkhe) ([fhefh2015/GitHub1s_chrome_extension](https://github.com/fhefh2015/GitHub1s_chrome_extension))
 - [github-code-viewer](https://chrome.google.com/webstore/detail/github-code-viewer/ecddapgifccgblebfibdgkagfbdagjfn) ([febaoshan/edge-extensions-github-code-viewer](https://github.com/febaoshan/edge-extensions-github-code-viewer))
 - Github1s Extension ([Darkempire78/GitHub1s-Extension](https://github.com/Darkempire78/GitHub1s-Extension))
 - [Github Web IDE](https://chrome.google.com/webstore/detail/adjiklnjodbiaioggfpbpkhbfcnhgkfe) ([zvizvi/Github-Web-IDE](https://github.com/zvizvi/Github-Web-IDE))
 - [shortcut to github1s](https://chrome.google.com/webstore/detail/shortcut-to-github1s/gfcdbodapcbfckbfpmgeldfkkgjknceo) ([katsuhisa91/github1s-shortcut](https://github.com/katsuhisa91/github1s-shortcut))
-- [Github1s Shortut - Open source](https://github.com/Fauzdar1/Github1s) 
+- [Github1s Shortut - Open source](https://github.com/Fauzdar1/Github1s)
+- [⚡️ 1s to GitHub1s!](https://github.com/holazz/webext-github1s)
+- [github1s Google Chrome Extensions](https://github.com/Lonely-Mr-zhang/github_1s_vscode)
 
 ### Firefox Extensions
 
@@ -172,17 +195,4 @@ The continued development and maintenance of GitHub1s is made possible by these 
 ### Tampermonkey scripts
 
 - [Mr-B0b/TamperMonkeyScripts/vscode.js](https://github.com/Mr-B0b/TamperMonkeyScripts/blob/main/vscode.js)
-
-## Maintainers! :blush:
-
-<table>
-  <tbody><tr>
-    <td align="center"><a href="https://github.com/conwnet"><img alt="" src="https://avatars.githubusercontent.com/conwnet" width="100px;"><br><sub><b>netcon</b></sub></a><br><a href="https://github.com/conwnet/github1s/commits?author=conwnet" title="Code">💻 🖋</a></td> </a></td>
-    <td align="center"><a href="https://github.com/xcv58"><img alt="" src="https://avatars.githubusercontent.com/xcv58" width="100px;"><br><sub><b>xcv58</b></sub></a><br><a href="https://github.com/conwnet/github1s/commits?author=xcv58" title="Code">💻 🖋</a></td></a></td>
-    <td align="center"><a href="https://github.com/Siddhant-K-code"><img alt="" src="https://avatars.githubusercontent.com/Siddhant-K-code" width="100px;"><br><sub><b>Siddhant Khare</b></sub></a><br><a href="https://github.com/conwnet/github1s/commits?author=Siddhant-K-code" title="Code">💻 🖋</a></td> </a></td>
-  </tr>
-</tbody></table>
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/conwnet/github1s.svg)](https://starchart.cc/conwnet/github1s)
+</details>
