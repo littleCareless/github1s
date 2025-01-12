@@ -3,9 +3,8 @@
  * @author netcon
  */
 
-import * as vscode from 'vscode';
-
 export const noop = () => {};
+export const isNil = (value: any) => value === undefined || value === null;
 
 export const trimStart = (str: string, chars: string = ' '): string => {
 	let index = 0;
@@ -24,11 +23,11 @@ export const trimEnd = (str: string, chars: string = ' '): string => {
 };
 
 export const joinPath = (...segments: string[]): string => {
-	if (!segments.length) {
+	const validSegments = segments.filter(Boolean);
+	if (!validSegments.length) {
 		return '';
 	}
-
-	return segments.reduce((prev, segment) => {
+	return validSegments.reduce((prev, segment) => {
 		return trimEnd(prev, '/') + '/' + trimStart(segment, '/');
 	});
 };
@@ -43,7 +42,10 @@ export const basename = (path: string): string => {
 	return trimmedPath.substr(trimmedPath.lastIndexOf('/') + 1) || '';
 };
 
-export const uniqueId = ((id) => () => id++)(1);
+export const uniqueId = (
+	(id) => () =>
+		id++
+)(1);
 
 export const prop = (obj: object, path: (string | number)[] = []): any => {
 	let cur = obj;
@@ -53,27 +55,6 @@ export const prop = (obj: object, path: (string | number)[] = []): any => {
 
 export const last = <T>(array: readonly T[]): T => {
 	return array[array.length - 1];
-};
-
-export const getNonce = (): string => {
-	let text: string = '';
-	const possible =
-		'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-	for (let i = 0; i < 32; i++) {
-		text += possible.charAt(Math.floor(Math.random() * possible.length));
-	}
-	return text;
-};
-
-export const getWebviewOptions = (
-	extensionUri: vscode.Uri
-): vscode.WebviewOptions => {
-	return {
-		// Enable javascript in the webview
-		enableScripts: true,
-		// And restrict the webview to only loading content from our extension's `assets` directory.
-		localResourceRoots: [vscode.Uri.joinPath(extensionUri, 'assets')],
-	};
 };
 
 export const encodeFilePath = (filePath: string): string => {
